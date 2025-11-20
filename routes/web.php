@@ -1,16 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ConnexionController;
 
 Route::get('/', function () {
     return view('Connexion');
 });
 
 
-Route::post('/login', function () {
-    return redirect('/accueil'); 
-});
+Route::post('/login', [ConnexionController::class, 'Con']);
 
-Route::get('/accueil', function (){
-    return view('accueil');
-});
+
